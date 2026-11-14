@@ -9,15 +9,10 @@ def get_greeting(name: str) -> str:
     return f"Hello, {name}! Your first MCP tool works."
 
 @mcp.tool()
-def add_numbers(a: int, b: int) -> int:
-    """Add two numbers."""
-    return a + b
-
-@mcp.tool()
 def divide_numbers(a: float, b: float) -> float:
     """Divide two numbers."""
     if b == 0:
-        return "Error: Division by zero is not allowed."
+        raise ValueError("Division by zero is not allowed.")
     return a / b
 
 if __name__ == "__main__":
